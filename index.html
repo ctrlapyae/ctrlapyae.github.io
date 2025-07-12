@@ -1,1 +1,398 @@
-<h1>Testing......</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Developer | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #5e35b1;
+            --primary-light: #7e57c2;
+            --secondary: #26a69a;
+            --dark: #121212;
+            --light: #f5f5f7;
+            --gray: #9e9e9e;
+            --success: #43a047;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 30px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--primary);
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #7e57c2, #26a69a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        section {
+            background: rgba(30, 30, 46, 0.7);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary-light);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background: rgba(94, 53, 177, 0.2);
+        }
+
+        .skill-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--primary-light);
+        }
+
+        .skill-card i {
+            font-size: 1.8rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-light);
+        }
+
+        .project-info p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .experience-header h3 {
+            color: var(--primary-light);
+        }
+
+        .date {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .skills-container, .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-container">
+                <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Mobile Developer" class="profile-img">
+                <div class="profile-info">
+                    <h1>Alex Morgan</h1>
+                    <p class="tagline">Senior Mobile Developer | Flutter & React Native Expert</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-medium"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="about">
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>Hello! I'm a passionate mobile developer with 5+ years of experience creating beautiful and functional applications for iOS and Android platforms. I specialize in cross-platform development using Flutter and React Native.</p>
+            <p>My focus is on building high-performance applications with elegant UIs and seamless user experiences. I'm constantly learning new technologies and best practices to deliver cutting-edge mobile solutions.</p>
+        </section>
+
+        <section class="skills">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h3><i class="fab fa-flutter"></i> Flutter</h3>
+                    <p>Expert in building cross-platform apps with Flutter, using BLoC, Provider, and Riverpod for state management.</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fab fa-react"></i> React Native</h3>
+                    <p>Experienced in creating performant React Native apps with Redux and Context API for state management.</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fab fa-swift"></i> Swift</h3>
+                    <p>Proficient in native iOS development using Swift and SwiftUI, with Core Data and Combine framework.</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fab fa-android"></i> Kotlin</h3>
+                    <p>Skilled in Android development with Kotlin, using Jetpack Compose and modern Android architecture.</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-fire"></i> Firebase</h3>
+                    <p>Extensive experience with Firebase services including Auth, Firestore, Cloud Functions, and Analytics.</p>
+                </div>
+                <div class="skill-card">
+                    <h3><i class="fas fa-cloud"></i> Backend Integration</h3>
+                    <p>Experience integrating mobile apps with RESTful APIs, GraphQL, and WebSocket services.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2><i class="fas fa-laptop-code"></i> Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Finance App" class="project-img">
+                    <div class="project-info">
+                        <h3>FinTrack Pro</h3>
+                        <p>A comprehensive financial management app with expense tracking, budgeting, and investment monitoring.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Project</a>
+                            <a href="#" class="btn btn-outline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Fitness App" class="project-img">
+                    <div class="project-info">
+                        <h3>FitLife Trainer</h3>
+                        <p>AI-powered fitness app with personalized workout plans, nutrition tracking, and progress analytics.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Project</a>
+                            <a href="#" class="btn btn-outline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Travel App" class="project-img">
+                    <div class="project-info">
+                        <h3>Travel Companion</h3>
+                        <p>Travel planning app with itinerary management, local recommendations, and real-time translation.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-primary">View Project</a>
+                            <a href="#" class="btn btn-outline">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Senior Mobile Developer</h3>
+                    <span class="date">2020 - Present</span>
+                </div>
+                <p>Tech Innovations Inc.</p>
+                <ul>
+                    <li>Led development of flagship mobile app with 500k+ downloads</li>
+                    <li>Implemented CI/CD pipelines reducing release time by 40%</li>
+                    <li>Mentored junior developers and conducted technical workshops</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Mobile App Developer</h3>
+                    <span class="date">2018 - 2020</span>
+                </div>
+                <p>Digital Solutions Ltd.</p>
+                <ul>
+                    <li>Developed 10+ mobile applications for clients in various industries</li>
+                    <li>Optimized app performance, reducing crash rates by 35%</li>
+                    <li>Integrated payment gateways and third-party APIs</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2023 Alex Morgan | Mobile Developer Portfolio</p>
+            <p>Designed with ❤️ for GitHub</p>
+        </footer>
+    </div>
+</body>
+</html>
