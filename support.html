@@ -110,6 +110,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            /* Fixed icon centering */
+            font-size: 1.2rem; /* Added font-size to control icon size */
+            flex-shrink: 0; /* Prevent icon from shrinking */
         }
         
         p {
@@ -185,6 +188,18 @@
             margin: 20px 0;
         }
         
+        /* Added animation for icons */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        h3 i {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        /* Added responsive adjustments */
         @media (max-width: 600px) {
             .header {
                 padding: 30px 20px;
@@ -200,6 +215,21 @@
             
             .content {
                 padding: 30px 20px;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            h3 i {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+            }
+            
+            .email-link {
+                padding: 12px 24px;
+                font-size: 1.1rem;
             }
         }
     </style>
