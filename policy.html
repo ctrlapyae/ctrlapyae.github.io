@@ -3,112 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy - Thai-Rates</title>
+  <title>Privacy Policy – Thai-Rates</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <style>
+    :root {
+      --primary: #0f62fe;
+      --background: #f5f7fa;
+      --card-bg: #ffffff;
+      --text: #333;
+      --muted: #777;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    h1, h2 {
-      color: #222;
-    }
-    h1 {
-      margin-bottom: 0.2em;
-    }
-    p {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: var(--background);
+      color: var(--text);
       line-height: 1.7;
     }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      color: var(--primary);
+      margin-top: 1.4em;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 0.2em;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+
     ul {
       padding-left: 20px;
     }
-    .contact {
-      margin-top: 40px;
-      font-size: 1rem;
-    }
-    .contact a {
-      color: #0066cc;
+
+    a {
+      color: var(--primary);
       text-decoration: none;
     }
-    .contact a:hover {
+
+    a:hover {
       text-decoration: underline;
     }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .contact {
+      font-size: 1rem;
+    }
+
     footer {
       text-align: center;
-      padding: 20px;
+      color: var(--muted);
       font-size: 0.9rem;
-      color: #777;
+      margin-top: 60px;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Privacy Policy</h1>
-    <p><strong>Effective Date:</strong> July 27, 2025</p>
+    <div class="card">
+      <h1>Privacy Policy</h1>
+      <p><strong>Effective Date:</strong> July 27, 2025</p>
 
-    <p><strong>Thai-Rates</strong> (“we”, “our”, or “us”) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect information in relation to your use of our mobile application, <strong>Thai-Rates</strong>, which provides users with access to:</p>
-    <ul>
-      <li>Currency exchange rates</li>
-      <li>Global and Thai gold prices</li>
-      <li>Thai oil prices</li>
-      <li>Thailand Government Lottery results</li>
-    </ul>
-
-    <h2>1. Information Collection</h2>
-    <p>We <strong>do not collect</strong>, store, or share any personally identifiable information (PII) from users. The app operates without requiring user registration or personal data input.</p>
-
-    <h2>2. Data from Third-Party Services</h2>
-    <p>We integrate third-party services to fetch and display real-time data. These services may collect data independently:</p>
-
-    <ul>
-      <li><strong>Gold Price Data:</strong>  
-        We retrieve global and Thai gold prices from <a href="https://www.livepriceofgold.com/thailand-gold-price.html" target="_blank" rel="noopener noreferrer">LivePriceOfGold</a>. Refer to their <a href="https://www.livepriceofgold.com/privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> for more details.
-      </li>
-      <li><strong>Advertising:</strong>  
-        We use Google AdMob, which may collect:
+      <div class="section">
+        <p><strong>Thai-Rates</strong> ("we", "our", or "us") provides users with easy access to:</p>
         <ul>
-          <li>Device information</li>
-          <li>Ad interactions</li>
-          <li>IP address (for geolocation)</li>
+          <li>Currency exchange rates</li>
+          <li>Global and Thai gold prices</li>
+          <li>Thai oil prices</li>
+          <li>Thailand Government Lottery results</li>
         </ul>
-        Read Google’s policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
-      </li>
-    </ul>
+        <p>We are committed to protecting your privacy. This Privacy Policy explains how we handle your data.</p>
+      </div>
 
-    <h2>3. How We Use Information</h2>
-    <p>Thai-Rates does not use or retain any user data. Any data collected by third-party services is used solely to deliver accurate content and relevant ads.</p>
+      <div class="section">
+        <h2>1. Information Collection</h2>
+        <p>We <strong>do not collect</strong>, store, or share any personally identifiable information (PII) from users. No login or personal data input is required to use the app.</p>
+      </div>
 
-    <h2>4. Children’s Privacy</h2>
-    <p>Our app does not target or knowingly collect information from children under the age of 13.</p>
+      <div class="section">
+        <h2>2. Third-Party Data Sources</h2>
+        <ul>
+          <li><strong>Gold Prices:</strong>  
+            Global and Thai gold rates are retrieved from  
+            <a href="https://www.livepriceofgold.com/thailand-gold-price.html" target="_blank" rel="noopener noreferrer">
+              livepriceofgold.com
+            </a>. Please refer to their 
+            <a href="https://www.livepriceofgold.com/privacy-policy.html" target="_blank" rel="noopener noreferrer">
+              Privacy Policy
+            </a>.
+          </li>
+          <li><strong>Advertising:</strong>  
+            We use Google AdMob. It may collect:
+            <ul>
+              <li>Device data (e.g., model, OS)</li>
+              <li>Ad interactions</li>
+              <li>IP address (for geolocation)</li>
+            </ul>
+            Learn more: 
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              Google Privacy Policy
+            </a>.
+          </li>
+        </ul>
+      </div>
 
-    <h2>5. Data Security</h2>
-    <p>While we do not collect or store user data, we ensure our app and third-party services follow secure practices.</p>
+      <div class="section">
+        <h2>3. How We Use Information</h2>
+        <p>Thai-Rates does not store or use any personal data. Third-party services only use data to deliver content or ads.</p>
+      </div>
 
-    <h2>6. External Links</h2>
-    <p>Our app may contain links to third-party sites. We are not responsible for their privacy practices or content.</p>
+      <div class="section">
+        <h2>4. Children’s Privacy</h2>
+        <p>Our app is not intended for children under 13. We do not knowingly collect data from minors.</p>
+      </div>
 
-    <h2>7. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy occasionally. Changes will be published on this page with the revised date.</p>
+      <div class="section">
+        <h2>5. Data Security</h2>
+        <p>We use only trusted services and take steps to ensure data security through secure connections and updated components.</p>
+      </div>
 
-    <h2>8. Contact Us</h2>
-    <div class="contact">
-      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:lapsejhon@gmail.com">lapsejhon@gmail.com</a></p>
-      <p><i class="fas fa-globe"></i> Website: <a href="https://www.ctrlapyae.pro" target="_blank">www.ctrlapyae.pro</a></p>
+      <div class="section">
+        <h2>6. External Links</h2>
+        <p>Our app may link to external sources. We are not responsible for the content or privacy of those websites.</p>
+      </div>
+
+      <div class="section">
+        <h2>7. Policy Updates</h2>
+        <p>We may update this policy from time to time. Changes will be posted here with a new effective date.</p>
+      </div>
+
+      <div class="section">
+        <h2>8. Contact Us</h2>
+        <div class="contact">
+          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:lapsejhon@gmail.com">lapsejhon@gmail.com</a></p>
+          <p><i class="fas fa-globe"></i> Website: <a href="https://www.ctrlapyae.pro" target="_blank">www.ctrlapyae.pro</a></p>
+        </div>
+      </div>
     </div>
+    <footer>
+      &copy; 2025 Thai-Rates. All rights reserved.
+    </footer>
   </div>
-
-  <footer>
-    &copy; 2025 Thai-Rates. All rights reserved.
-  </footer>
 </body>
 </html>
