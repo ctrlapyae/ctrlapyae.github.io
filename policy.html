@@ -2,142 +2,199 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy – Thai-Rates</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Thai-Rates</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    :root {
-      --primary: #0f62fe;
-      --background: #f5f7fa;
-      --card-bg: #ffffff;
-      --text: #333;
-      --muted: #777;
-    }
-
     body {
       margin: 0;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.7;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f8fa;
+      color: #333;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
-    h1, h2 {
-      color: var(--primary);
-      margin-top: 1.4em;
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 0.2em;
+    .header h1 {
+      margin-bottom: 0.5rem;
+      color: #0f4c75;
     }
 
-    .card {
-      background: var(--card-bg);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    .header .subtitle {
+      color: #3282b8;
     }
 
-    ul {
-      padding-left: 20px;
+    .content {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
+    .intro {
+      margin-bottom: 2rem;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .policy-section {
+      margin-bottom: 2rem;
     }
 
-    .section {
-      margin-top: 40px;
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
     }
 
-    .contact {
-      font-size: 1rem;
+    .section-number {
+      background: #0f4c75;
+      color: #fff;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.75rem;
+      font-weight: bold;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #0f4c75;
+    }
+
+    .section-content p {
+      margin: 0.75rem 0;
+    }
+
+    .highlight-box {
+      background: #e8f0fe;
+      border-left: 4px solid #0f4c75;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 8px;
     }
 
     .data-sources {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-      margin: 20px 0;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
     }
 
     .source-card {
-      background: #eef2f7;
-      border-radius: 12px;
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
+      background: #f0f8ff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      text-align: center;
     }
 
     .source-card i {
-      color: #555;
-      font-size: 1.3rem;
+      font-size: 1.6rem;
+      color: #3282b8;
+      margin-bottom: 0.5rem;
     }
 
     .source-name {
       font-weight: bold;
-      color: #222;
+      color: #0f4c75;
     }
 
-    footer {
+    .contact-link {
+      color: #3282b8;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0.5rem 0;
+    }
+
+    .contact-link i {
+      margin-right: 0.5rem;
+    }
+
+    .footer {
       text-align: center;
-      color: var(--muted);
+      margin-top: 2rem;
       font-size: 0.9rem;
-      margin-top: 60px;
-      padding: 20px;
+      color: #666;
+    }
+
+    .last-updated {
+      font-style: italic;
+      margin-top: 0.25rem;
     }
 
     @media (max-width: 600px) {
-      .card {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 1.8em;
+      .container {
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="card">
+    <div class="header">
       <h1>Privacy Policy</h1>
-      <p><strong>Effective Date:</strong> July 27, 2025</p>
+      <p class="subtitle">Thai-Rates – Currency, Gold, Oil & Lottery App</p>
+    </div>
 
-      <div class="section">
-        <p><strong>Thai-Rates</strong> ("we", "our", or "us") is a mobile application that provides users with:</p>
-        <ul>
-          <li>Currency exchange rates</li>
-          <li>Gold prices (global and Thai)</li>
-          <li>Thai oil prices</li>
-          <li>Thailand Government Lottery results</li>
-        </ul>
-        <p>We are committed to protecting your privacy. This Privacy Policy explains how we handle your information.</p>
+    <div class="content">
+      <div class="intro">
+        <p>Thai-Rates (“we”, “our”, or “us”) respects your privacy. This Privacy Policy describes how we handle information in our app, which displays exchange rates, gold prices, oil rates, and Thai lottery results.</p>
       </div>
 
-      <div class="section">
-        <h2>1. Information Collection</h2>
-        <p>We <strong>do not collect</strong>, store, or share any personally identifiable information (PII). The app works without user registration or login.</p>
-      </div>
-
-      <div class="section">
-        <h2>2. Data Sources</h2>
+      <div class="policy-section">
+        <div class="section-header">
+          <div class="section-number">1</div>
+          <h2 class="section-title">Data Collection</h2>
+        </div>
         <div class="section-content">
-          <p>The app displays data from the following public and third-party sources:</p>
+          <p>We do not collect, store, or share personally identifiable information (PII) such as names, emails, or location data.</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <div class="section-number">2</div>
+          <h2 class="section-title">Third-Party Services</h2>
+        </div>
+        <div class="section-content">
+          <p>We use third-party services to display real-time data. These services may collect anonymous technical data (e.g. device type, language, time zone) as part of their normal operations.</p>
+          <div class="highlight-box">
+            <p><strong>Google AdMob:</strong> Used for advertising. AdMob may collect non-personal data like your device ID, IP, and ad interaction logs.</p>
+            <p><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <div class="section-number">3</div>
+          <h2 class="section-title">Children's Privacy</h2>
+        </div>
+        <div class="section-content">
+          <p>This app is not designed for children under 13. We do not knowingly collect data from minors.</p>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <div class="section-header">
+          <div class="section-number">4</div>
+          <h2 class="section-title">Data Sources</h2>
+        </div>
+        <div class="section-content">
+          <p>The following public and official sources are used in the app:</p>
           <div class="data-sources">
             <div class="source-card">
               <i class="fas fa-ticket-alt"></i>
@@ -145,8 +202,7 @@
             </div>
             <div class="source-card">
               <i class="fas fa-coins"></i>
-              <div class="source-name">Live Gold Price Thailand</div>
-              <small><a href="https://www.livepriceofgold.com/thailand-gold-price.html" target="_blank">View Source</a></small>
+              <div class="source-name">Gold API</div>
             </div>
             <div class="source-card">
               <i class="fas fa-chart-line"></i>
@@ -156,53 +212,50 @@
               <i class="fas fa-search"></i>
               <div class="source-name">Sanook Lotto Checker</div>
             </div>
+            <div class="source-card">
+              <i class="fas fa-globe"></i>
+              <div class="source-name">LivePriceOfGold.com</div>
+              <a href="https://www.livepriceofgold.com/thailand-gold-price.html" target="_blank" style="font-size: 0.9rem; display: block; margin-top: 8px; color: #3282b8; text-decoration: underline;">
+                View Source
+              </a>
+            </div>
           </div>
-          <p>We do not store, control, or alter this data. The app only displays publicly available information.</p>
+          <p>We do not control or store their data. The app only displays publicly available information.</p>
         </div>
       </div>
 
-      <div class="section">
-        <h2>3. Advertising</h2>
-        <p>We use Google AdMob to display ads in the app. AdMob may collect limited non-personal data such as:</p>
-        <ul>
-          <li>Device and operating system type</li>
-          <li>App usage (anonymous)</li>
-          <li>IP address (used for location targeting)</li>
-        </ul>
-        <p>See <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> for more details.</p>
+      <div class="policy-section">
+        <div class="section-header">
+          <div class="section-number">5</div>
+          <h2 class="section-title">Policy Changes</h2>
+        </div>
+        <div class="section-content">
+          <p>We may revise this policy from time to time. Changes will be updated on this page with the latest date.</p>
+        </div>
       </div>
 
-      <div class="section">
-        <h2>4. Children's Privacy</h2>
-        <p>Thai-Rates is not intended for children under 13. We do not knowingly collect information from children.</p>
-      </div>
-
-      <div class="section">
-        <h2>5. Security</h2>
-        <p>We take privacy seriously. No user data is stored or transmitted from our app. All external data is securely fetched and shown to the user.</p>
-      </div>
-
-      <div class="section">
-        <h2>6. External Links</h2>
-        <p>The app may contain links to third-party sites. We are not responsible for their content or privacy practices.</p>
-      </div>
-
-      <div class="section">
-        <h2>7. Policy Changes</h2>
-        <p>This Privacy Policy may be updated from time to time. Any changes will be posted here with the new effective date.</p>
-      </div>
-
-      <div class="section">
-        <h2>8. Contact Us</h2>
-        <div class="contact">
-          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:lapsejhon@gmail.com">lapsejhon@gmail.com</a></p>
-          <p><i class="fas fa-globe"></i> Website: <a href="https://www.ctrlapyae.pro" target="_blank">www.ctrlapyae.pro</a></p>
+      <div class="policy-section">
+        <div class="section-header">
+          <div class="section-number">6</div>
+          <h2 class="section-title">Contact</h2>
+        </div>
+        <div class="section-content">
+          <p>If you have questions or concerns, contact us:</p>
+          <a href="mailto:lapsejhon@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i> lapsejhon@gmail.com
+          </a>
+          <br />
+          <a href="https://www.ctrlapyae.pro" class="contact-link" target="_blank">
+            <i class="fas fa-globe"></i> www.ctrlapyae.pro
+          </a>
         </div>
       </div>
     </div>
-    <footer>
-      &copy; 2025 Thai-Rates. All rights reserved.
-    </footer>
+
+    <div class="footer">
+      <p>Thai-Rates App</p>
+      <p class="last-updated">Last Updated: July 2025</p>
+    </div>
   </div>
 </body>
 </html>
