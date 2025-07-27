@@ -1,261 +1,417 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy - Thai-Rates</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
   <style>
-    body {
+    /* Reset & base */
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f8fa;
-      color: #333;
-      line-height: 1.6;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #355c7d, #6c5b7b, #c06c84);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 3rem 1rem;
+      color: #2c3e50;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
+      max-width: 960px;
+      width: 100%;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      padding-bottom: 3rem;
     }
 
     .header {
+      background: linear-gradient(90deg, #1c3d5a, #2978b5);
+      padding: 3.5rem 2rem 4rem;
+      color: #f0f6fc;
       text-align: center;
-      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before,
+    .header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      filter: blur(80px);
+      z-index: 0;
+    }
+
+    .header::before {
+      top: -80px;
+      left: -100px;
+      width: 220px;
+      height: 220px;
+    }
+
+    .header::after {
+      bottom: -120px;
+      right: -120px;
+      width: 300px;
+      height: 300px;
     }
 
     .header h1 {
+      font-size: 3rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
-      color: #0f4c75;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.05em;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
 
-    .header .subtitle {
-      color: #3282b8;
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 400;
+      opacity: 0.85;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.04em;
     }
 
     .content {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      padding: 3rem 3.5rem 0 3.5rem;
+      position: relative;
+      z-index: 2;
     }
 
-    .intro {
-      margin-bottom: 2rem;
+    .intro p {
+      font-size: 1.25rem;
+      margin-bottom: 3rem;
+      color: #34495e;
     }
 
     .policy-section {
-      margin-bottom: 2rem;
+      margin-bottom: 3.5rem;
     }
 
     .section-header {
       display: flex;
       align-items: center;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 3px solid #2978b5;
+      padding-bottom: 0.7rem;
     }
 
     .section-number {
-      background: #0f4c75;
+      background: #2978b5;
       color: #fff;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      width: 28px;
-      height: 28px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      margin-right: 0.75rem;
-      font-weight: bold;
+      align-items: center;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      box-shadow: 0 3px 8px rgba(41, 120, 181, 0.6);
+      transition: background-color 0.3s ease;
+    }
+
+    .section-header:hover .section-number {
+      background-color: #1c3d5a;
+      box-shadow: 0 5px 12px rgba(28, 61, 90, 0.7);
     }
 
     .section-title {
-      margin: 0;
-      font-size: 1.2rem;
-      color: #0f4c75;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #1c3d5a;
+      letter-spacing: 0.02em;
     }
 
     .section-content p {
-      margin: 0.75rem 0;
+      font-size: 1.15rem;
+      margin-bottom: 1.25rem;
+      color: #2c3e50;
+      max-width: 760px;
     }
 
     .highlight-box {
-      background: #e8f0fe;
-      border-left: 4px solid #0f4c75;
-      padding: 1rem;
-      margin-top: 1rem;
-      border-radius: 8px;
+      background: #d4e6fb;
+      border-left: 5px solid #2978b5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-top: 1.5rem;
+      color: #154360;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 10px rgba(41, 120, 181, 0.25);
+      line-height: 1.5;
+    }
+
+    .highlight-box a {
+      color: #154360;
+      font-weight: 700;
+      text-decoration: underline;
     }
 
     .data-sources {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 1.75rem;
+      margin-top: 2rem;
     }
 
     .source-card {
-      background: #f0f8ff;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      background: #ebf3ff;
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
       text-align: center;
+      cursor: default;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      user-select: none;
+    }
+
+    .source-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
     }
 
     .source-card i {
-      font-size: 1.6rem;
-      color: #3282b8;
-      margin-bottom: 0.5rem;
+      font-size: 2.4rem;
+      color: #2978b5;
+      margin-bottom: 0.8rem;
     }
 
     .source-name {
-      font-weight: bold;
-      color: #0f4c75;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #1c3d5a;
+      margin-bottom: 0.5rem;
+    }
+
+    .source-card a {
+      font-size: 0.9rem;
+      color: #2978b5;
+      text-decoration: underline;
+      user-select: text;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .source-card a:hover {
+      color: #1c3d5a;
     }
 
     .contact-link {
-      color: #3282b8;
+      display: inline-flex;
+      align-items: center;
+      background-color: #2978b5;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
       text-decoration: none;
-      display: inline-block;
-      margin: 0.5rem 0;
+      margin-top: 1.2rem;
+      box-shadow: 0 5px 15px rgba(41, 120, 181, 0.5);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      user-select: none;
     }
 
     .contact-link i {
-      margin-right: 0.5rem;
+      margin-right: 0.9rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-link:hover {
+      background-color: #1c3d5a;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(28, 61, 90, 0.7);
     }
 
     .footer {
       text-align: center;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #666;
+      color: #2c3e50;
+      font-weight: 500;
+      font-size: 1rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
     }
 
     .last-updated {
+      font-size: 0.95rem;
+      color: #677d9a;
       font-style: italic;
-      margin-top: 0.25rem;
+      margin-top: 0.3rem;
     }
 
     @media (max-width: 600px) {
       .container {
-        padding: 1rem;
+        padding: 1.5rem 1rem 2.5rem;
+      }
+
+      .header {
+        padding: 2.5rem 1.5rem 3rem;
+      }
+
+      .header h1 {
+        font-size: 2.4rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .content {
+        padding: 2rem 1.5rem 0 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.35rem;
+      }
+
+      .policy-section {
+        margin-bottom: 2.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
+  <div class="container" role="main">
+    <header class="header">
       <h1>Privacy Policy</h1>
-      <p class="subtitle">Thai-Rates – Currency, Gold, Oil & Lottery App</p>
-    </div>
+      <p class="subtitle">Thai-Rates – Currency, Gold, Oil &amp; Lottery App</p>
+    </header>
 
-    <div class="content">
-      <div class="intro">
-        <p>Thai-Rates (“we”, “our”, or “us”) respects your privacy. This Privacy Policy describes how we handle information in our app, which displays exchange rates, gold prices, oil rates, and Thai lottery results.</p>
-      </div>
+    <article class="content">
+      <section class="intro" aria-label="Introduction">
+        <p>
+          Thai-Rates (“we”, “our”, or “us”) respects your privacy. This Privacy Policy describes how we handle information in our app, which displays exchange rates, gold prices, oil rates, and Thai lottery results.
+        </p>
+      </section>
 
-      <div class="policy-section">
+      <section class="policy-section" aria-labelledby="data-collection">
         <div class="section-header">
           <div class="section-number">1</div>
-          <h2 class="section-title">Data Collection</h2>
+          <h2 id="data-collection" class="section-title">Data Collection</h2>
         </div>
         <div class="section-content">
           <p>We do not collect, store, or share personally identifiable information (PII) such as names, emails, or location data.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="policy-section">
+      <section class="policy-section" aria-labelledby="third-party-services">
         <div class="section-header">
           <div class="section-number">2</div>
-          <h2 class="section-title">Third-Party Services</h2>
+          <h2 id="third-party-services" class="section-title">Third-Party Services</h2>
         </div>
         <div class="section-content">
-          <p>We use third-party services to display real-time data. These services may collect anonymous technical data (e.g. device type, language, time zone) as part of their normal operations.</p>
-          <div class="highlight-box">
+          <p>
+            We use third-party services to display real-time data. These services may collect anonymous technical data (e.g. device type, language, time zone) as part of their normal operations.
+          </p>
+          <div class="highlight-box" role="note">
             <p><strong>Google AdMob:</strong> Used for advertising. AdMob may collect non-personal data like your device ID, IP, and ad interaction logs.</p>
-            <p><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+            <p><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="policy-section">
+      <section class="policy-section" aria-labelledby="childrens-privacy">
         <div class="section-header">
           <div class="section-number">3</div>
-          <h2 class="section-title">Children's Privacy</h2>
+          <h2 id="childrens-privacy" class="section-title">Children's Privacy</h2>
         </div>
         <div class="section-content">
           <p>This app is not designed for children under 13. We do not knowingly collect data from minors.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="policy-section">
+      <section class="policy-section" aria-labelledby="data-sources">
         <div class="section-header">
           <div class="section-number">4</div>
-          <h2 class="section-title">Data Sources</h2>
+          <h2 id="data-sources" class="section-title">Data Sources</h2>
         </div>
         <div class="section-content">
           <p>The following public and official sources are used in the app:</p>
-          <div class="data-sources">
-            <div class="source-card">
-              <i class="fas fa-ticket-alt"></i>
+          <div class="data-sources" role="list">
+            <div class="source-card" role="listitem" tabindex="0" aria-label="Thai Government Lottery Office">
+              <i class="fas fa-ticket-alt" aria-hidden="true"></i>
               <div class="source-name">Thai Government Lottery Office</div>
             </div>
-            <div class="source-card">
-              <i class="fas fa-coins"></i>
+            <div class="source-card" role="listitem" tabindex="0" aria-label="Gold API">
+              <i class="fas fa-coins" aria-hidden="true"></i>
               <div class="source-name">Gold API</div>
             </div>
-            <div class="source-card">
-              <i class="fas fa-chart-line"></i>
+            <div class="source-card" role="listitem" tabindex="0" aria-label="Exchange Rates API">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
               <div class="source-name">Exchange Rates API</div>
             </div>
-            <div class="source-card">
-              <i class="fas fa-search"></i>
+            <div class="source-card" role="listitem" tabindex="0" aria-label="Sanook Lotto Checker">
+              <i class="fas fa-search" aria-hidden="true"></i>
               <div class="source-name">Sanook Lotto Checker</div>
             </div>
-            <div class="source-card">
-              <i class="fas fa-globe"></i>
+            <div class="source-card" role="listitem" tabindex="0" aria-label="LivePriceOfGold.com">
+              <i class="fas fa-globe" aria-hidden="true"></i>
               <div class="source-name">LivePriceOfGold.com</div>
-              <a href="https://www.livepriceofgold.com/thailand-gold-price.html" target="_blank" style="font-size: 0.9rem; display: block; margin-top: 8px; color: #3282b8; text-decoration: underline;">
+              <a href="https://www.livepriceofgold.com/thailand-gold-price.html" target="_blank" rel="noopener noreferrer" tabindex="0" style="font-size: 0.9rem; color: #2978b5; text-decoration: underline;">
                 View Source
               </a>
             </div>
           </div>
           <p>We do not control or store their data. The app only displays publicly available information.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="policy-section">
+      <section class="policy-section" aria-labelledby="policy-changes">
         <div class="section-header">
           <div class="section-number">5</div>
-          <h2 class="section-title">Policy Changes</h2>
+          <h2 id="policy-changes" class="section-title">Policy Changes</h2>
         </div>
         <div class="section-content">
           <p>We may revise this policy from time to time. Changes will be updated on this page with the latest date.</p>
         </div>
-      </div>
+      </section>
 
-      <div class="policy-section">
+      <section class="policy-section" aria-labelledby="contact">
         <div class="section-header">
           <div class="section-number">6</div>
-          <h2 class="section-title">Contact</h2>
+          <h2 id="contact" class="section-title">Contact</h2>
         </div>
         <div class="section-content">
           <p>If you have questions or concerns, contact us:</p>
-          <a href="mailto:lapsejhon@gmail.com" class="contact-link">
+          <a href="mailto:lapsejhon@gmail.com" class="contact-link" tabindex="0">
             <i class="fas fa-envelope"></i> lapsejhon@gmail.com
           </a>
           <br />
-          <a href="https://www.ctrlapyae.pro" class="contact-link" target="_blank">
+          <a href="https://www.ctrlapyae.pro" class="contact-link" target="_blank" rel="noopener noreferrer" tabindex="0">
             <i class="fas fa-globe"></i> www.ctrlapyae.pro
           </a>
         </div>
-      </div>
-    </div>
+      </section>
+    </article>
 
-    <div class="footer">
+    <footer class="footer" role="contentinfo">
       <p>Thai-Rates App</p>
       <p class="last-updated">Last Updated: July 2025</p>
-    </div>
+    </footer>
   </div>
 </body>
 </html>
