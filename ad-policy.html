@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertisement Policy - MRates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #2a5298, #3a7bd5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin: 30px 0;
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #0f4c75, #3282b8);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            right: -60px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 40px;
+            position: relative;
+        }
+        
+        .intro {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3282b8;
+        }
+        
+        .section-icon {
+            background: #0f4c75;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .section-title {
+            color: #0f4c75;
+            font-size: 1.6rem;
+        }
+        
+        .section-content {
+            padding-left: 65px;
+        }
+        
+        .section-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .ad-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .ad-type-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s ease;
+        }
+        
+        .ad-type-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .ad-icon {
+            font-size: 2.5rem;
+            color: #3282b8;
+            margin-bottom: 15px;
+        }
+        
+        .ad-name {
+            font-weight: 600;
+            color: #0f4c75;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .ad-desc {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .credit-system {
+            background: #e8f4fd;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #228be6;
+        }
+        
+        .credit-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .credit-icon {
+            background: #228be6;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .credit-title {
+            font-size: 1.5rem;
+            color: #0f4c75;
+            font-weight: 600;
+        }
+        
+        .credit-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .credit-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #d0ebff;
+        }
+        
+        .credit-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .credit-value {
+            color: #6c757d;
+        }
+        
+        .package-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .package-table th {
+            background: #0f4c75;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .package-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .package-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .package-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .policy-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #adb5bd;
+        }
+        
+        .policy-list {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        
+        .policy-list li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .compliance-box {
+            background: #d1e7dd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #198754;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            background: #0f4c75;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            background: #3282b8;
+            transform: translateY(-3px);
+        }
+        
+        .contact-link i {
+            margin-right: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f0f8ff;
+            color: #0f4c75;
+            font-weight: 500;
+            border-top: 1px solid #d1e8ff;
+        }
+        
+        .last-updated {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section-content {
+                padding-left: 0;
+            }
+            
+            .ad-types {
+                grid-template-columns: 1fr;
+            }
+            
+            .credit-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Advertisement Policy</h1>
+            <p class="subtitle">MRates - Advertising & Credit System Information</p>
+        </div>
+        
+        <div class="content">
+            <div class="intro">
+                <p>This Advertisement Policy explains how advertisements work in the MRates app, our credit-based ad removal system, and your choices regarding ads. By using the app, you acknowledge and agree to this policy.</p>
+                <p>MRates uses Google AdMob to display advertisements. This helps keep the app free while providing valuable services.</p>
+            </div>
+            
+            <div class="policy-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h2 class="section-title">Types of Advertisements</h2>
+                </div>
+                <div class="section-content">
+                    <p>MRates displays the following types of advertisements through Google AdMob:</p>
+                    
+                    <div class="ad-types">
+                        <div class="ad-type-card">
+                            <div class="ad-icon">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <div class="ad-name">Banner Ads</div>
+                            <div class="ad-desc">Small ads displayed at the top or bottom of screens</div>
+                        </div>
+                        
+                        <div class="ad-type-card">
+                            <div class="ad-icon">
+                                <i class="fas fa-expand-alt"></i>
+                            </div>
+                            <div class="ad-name">Interstitial Ads</div>
+                            <div class="ad-desc">Full-screen ads shown between app sections</div>
+                        </div>
+                        
+                        <div class="ad-type-card">
+                            <div class="ad-icon">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="ad-name">Rewarded Ads</div>
+                            <div class="ad-desc">Optional ads that reward users with credits</div>
+                        </div>
+                        
+                        <div class="ad-type-card">
+                            <div class="ad-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="ad-name">Native Ads</div>
+                            <div class="ad-desc">Integrated ads matching app's design</div>
+                        </div>
+                    </div>
+                    
+                    <div class="policy-box">
+                        <p><strong>Ad Frequency:</strong> Ads are shown at reasonable intervals to maintain user experience. We implement ad cooldowns to prevent excessive advertising.</p>
+                        <p><strong>Ad Content:</strong> All ads are served through Google AdMob and comply with Google's advertising policies. We do not control specific ad content.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h2 class="section-title">Credit System & Ad Removal</h2>
+                </div>
+                <div class="section-content">
+                    <p>MRates offers a credit-based system that allows users to temporarily remove ads by earning or spending credits.</p>
+                    
+                    <div class="credit-system">
+                        <div class="credit-header">
+                            <div class="credit-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="credit-title">How Credits Work</div>
+                        </div>
+                        
+                        <div class="credit-details">
+                            <div class="credit-item">
+                                <div class="credit-label">Earning Credits</div>
+                                <div class="credit-value">Watch optional rewarded ads to earn credits (1 credit per ad)</div>
+                            </div>
+                            
+                            <div class="credit-item">
+                                <div class="credit-label">Spending Credits</div>
+                                <div class="credit-value">Use credits to purchase temporary ad-free periods</div>
+                            </div>
+                            
+                            <div class="credit-item">
+                                <div class="credit-label">Credit Balance</div>
+                                <div class="credit-value">Credits are stored locally on your device</div>
+                            </div>
+                            
+                            <div class="credit-item">
+                                <div class="credit-label">Ad-Free Periods</div>
+                                <div class="credit-value">Temporary periods when no ads are shown</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: #0f4c75; margin: 25px 0 15px 0;">Ad-Free Packages</h3>
+                    
+                    <table class="package-table">
+                        <thead>
+                            <tr>
+                                <th>Package</th>
+                                <th>Duration</th>
+                                <th>Cost (Credits)</th>
+                                <th>Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Daily</td>
+                                <td>1 Day</td>
+                                <td>10 Credits</td>
+                                <td>Remove all ads for 24 hours</td>
+                            </tr>
+                            <tr>
+                                <td>Weekly</td>
+                                <td>7 Days</td>
+                                <td>69 Credits</td>
+                                <td>Remove all ads for 1 week</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly</td>
+                                <td>30 Days</td>
+                                <td>290 Credits</td>
+                                <td>Remove all ads for 1 month</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="policy-box">
+                        <p><strong>Important Notes:</strong></p>
+                        <ul class="policy-list">
+                            <li>Ad-free periods are temporary and will expire automatically</li>
+                            <li>Credits have no monetary value and cannot be exchanged for cash</li>
+                            <li>Ad-free status is device-specific and not transferable</li>
+                            <li>Clearing app data will reset credits and ad-free status</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h2 class="section-title">User Privacy & Data Collection</h2>
+                </div>
+                <div class="section-content">
+                    <p>Advertisement delivery involves limited data collection through Google AdMob:</p>
+                    
+                    <div class="policy-box">
+                        <p><strong>Data Collected by AdMob:</strong></p>
+                        <ul class="policy-list">
+                            <li>Device information (model, OS version)</li>
+                            <li>Advertising ID (for personalized ads)</li>
+                            <li>General location (country/region level)</li>
+                            <li>App usage data for ad performance</li>
+                        </ul>
+                        
+                        <p><strong>We do NOT collect:</strong></p>
+                        <ul class="policy-list">
+                            <li>Personal identification information</li>
+                            <li>Precise location data</li>
+                            <li>Contact information</li>
+                            <li>Sensitive personal data</li>
+                        </ul>
+                    </div>
+                    
+                    <p>For more details on Google's data practices, please review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h2 class="section-title">User Controls & Choices</h2>
+                </div>
+                <div class="section-content">
+                    <p>You have control over your advertising experience:</p>
+                    
+                    <div class="credit-system">
+                        <div class="credit-header">
+                            <div class="credit-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="credit-title">Available Controls</div>
+                        </div>
+                        
+                        <div class="credit-details">
+                            <div class="credit-item">
+                                <div class="credit-label">Opt-Out of Personalized Ads</div>
+                                <div class="credit-value">Available in device settings under "Ads" or through Google settings</div>
+                            </div>
+                            
+                            <div class="credit-item">
+                                <div class="credit-label">Credit System</div>
+                                <div class="credit-value">Earn credits to temporarily remove ads</div>
+                            </div>
+                            
+                            <div class="credit-item">
+                                <div class="credit-label">Ad Cooldowns</div>
+                                <div class="credit-value">Minimum 30 seconds between certain ad types</div>
+                            </div>
+                            
+                            <div class="credit-item">
+                                <div class="credit-label">Rewarded Ads</div>
+                                <div class="credit-value">Completely optional - watch only when you choose</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h2 class="section-title">Compliance & Standards</h2>
+                </div>
+                <div class="section-content">
+                    <div class="compliance-box">
+                        <p><strong>MRates complies with:</strong></p>
+                        <ul class="policy-list">
+                            <li>Google Play Developer Policies</li>
+                            <li>Google AdMob Program Policies</li>
+                            <li>Children's Online Privacy Protection Act (COPPA)</li>
+                            <li>General Data Protection Regulation (GDPR) principles</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="policy-box">
+                        <p><strong>Ad Content Standards:</strong> We only allow ads that comply with:</p>
+                        <ul class="policy-list">
+                            <li>No deceptive or misleading content</li>
+                            <li>No inappropriate or offensive material</li>
+                            <li>No gambling or adult content</li>
+                            <li>No malicious software or scams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+                <div class="section-content">
+                    <div class="policy-box">
+                        <p><strong>Q: Can I permanently remove ads?</strong></p>
+                        <p>A: The app offers temporary ad removal through the credit system. There is no permanent ad removal option at this time.</p>
+                    </div>
+                    
+                    <div class="policy-box">
+                        <p><strong>Q: What happens if I clear app data?</strong></p>
+                        <p>A: Clearing app data will reset your credits and any active ad-free periods. This data is stored locally on your device.</p>
+                    </div>
+                    
+                    <div class="policy-box">
+                        <p><strong>Q: Are credits transferable between devices?</strong></p>
+                        <p>A: No, credits and ad-free status are device-specific and cannot be transferred.</p>
+                    </div>
+                    
+                    <div class="policy-box">
+                        <p><strong>Q: How can I report inappropriate ads?</strong></p>
+                        <p>A: If you encounter inappropriate ads, please contact us with details. You can also report directly through Google AdMob.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h2 class="section-title">Contact & Support</h2>
+                </div>
+                <div class="section-content">
+                    <p>For questions, concerns, or feedback about our Advertisement Policy:</p>
+                    <a href="mailto:lapsejhon@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> lapsejhon@gmail.com
+                    </a>
+                    
+                    <p style="margin-top: 20px;">For Google AdMob specific concerns, please refer to <a href="https://support.google.com/admob" target="_blank">Google AdMob Support</a>.</p>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h2 class="section-title">Policy Updates</h2>
+                </div>
+                <div class="section-content">
+                    <p>We may update this Advertisement Policy from time to time. Significant changes will be communicated through app updates or in-app notifications.</p>
+                    <p>Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>MRates - Exchange Rates & Information App</p>
+            <p class="last-updated">Last Updated: July 2025</p>
+        </div>
+    </div>
+</body>
+</html>
